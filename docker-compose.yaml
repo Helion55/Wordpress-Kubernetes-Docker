@@ -3,27 +3,27 @@ services:
 
  app:
   image: wordpress:6.4.2-php8.1-apache
-  container_name: weppress
+  container_name: con_name
   restart: always
   ports:
    - 8080:80
   environment:
-   WORDPRESS_DB_HOST: db
-   WORDPRESS_DB_USER: admin
-   WORDPRESS_DB_PASSWORD: admin
-   WORDPRESS_DB_NAME: storage
+   WORDPRESS_DB_HOST: db_host
+   WORDPRESS_DB_USER: user
+   WORDPRESS_DB_PASSWORD: password
+   WORDPRESS_DB_NAME: db_name
    
   volumes:
    - wordpress:/var/www/html
    
  db:
   image: mysql:8.0
-  container_name: theDatabase
+  container_name: name
   restart: always
   environment:
-   MYSQL_DATABASE: storage
-   MYSQL_USER: admin
-   MYSQL_PASSWORD: admin
+   MYSQL_DATABASE: db_name
+   MYSQL_USER: user
+   MYSQL_PASSWORD: password
    MYSQL_RANDOM_ROOT_PASSWORD: '1'
   volumes:
    - db:/var/lib/mysql
