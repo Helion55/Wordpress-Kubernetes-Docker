@@ -9,5 +9,5 @@ spec:
  accessModes:
   - ReadWriteOnce
  hostPath:
-  path: "/home/poseidon/Downloads/Project/files/"
+  path: "files/"
  
