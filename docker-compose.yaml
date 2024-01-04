@@ -1,0 +1,40 @@
+version: "3.1"
+services:
+
+ app:
+  image: wordpress:6.4.2-php8.1-apache
+  container_name: weppress
+  restart: always
+  ports:
+   - 8080:80
+  environment:
+   WORDPRESS_DB_HOST: db
+   WORDPRESS_DB_USER: admin
+   WORDPRESS_DB_PASSWORD: admin
+   WORDPRESS_DB_NAME: storage
+   
+  volumes:
+   - wordpress:/var/www/html
+   
+ db:
+  image: mysql:8.0
+  container_name: theDatabase
+  restart: always
+  environment:
+   MYSQL_DATABASE: storage
+   MYSQL_USER: admin
+   MYSQL_PASSWORD: admin
+   MYSQL_RANDOM_ROOT_PASSWORD: '1'
+  volumes:
+   - db:/var/lib/mysql
+   
+volumes:
+ wordpress:
+ db:
+
+
+   
+
+ 
+
+
