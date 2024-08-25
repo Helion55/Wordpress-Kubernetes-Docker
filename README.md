@@ -1,4 +1,4 @@
-# Wordpress-Mysql Setup on Kubernetes
+# Wordpress-Mysql Setup on Kubernetes and on Docker Compose
   
 ![Diagram](Wordpress-Kubernetes-diagram.jpg)
 
